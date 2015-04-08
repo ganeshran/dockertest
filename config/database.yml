@@ -9,9 +9,13 @@ default: &default
   pool: 5
   timeout: 5000
 
-development:
-  <<: *default
+development:    
+  adapter: mysql2
+  host: db
+  username: root
+  password: my-secret-pw
   database: db/development.sqlite3
+  port: 13306
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
