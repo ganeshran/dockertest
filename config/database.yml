@@ -14,7 +14,7 @@ development:
   host: db
   username: root
   password: my-secret-pw
-  database: db/development.sqlite3
+  database: testdb
   port: 13306
 
 # Warning: The database defined as "test" will be erased and
