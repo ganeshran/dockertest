@@ -1,0 +1,64 @@
+<div class="container">
+	
+	<%= form_for(@sw_interaction, :html => {:class => "ci-form"}) do |f| %>
+		<div class="col-lg-7">
+			<% if @sw_interaction.errors.any? %>
+				<div class="errorPanel panel panel-danger">
+					<div class="panel-heading">	<h4><%= pluralize(@sw_interaction.errors.count, "error") %> prevented this Activity from being saved:</h4>
+					</div>
+
+					<ul class="list-group">
+						<% @sw_interaction.errors.full_messages.each do |msg| %>
+							<li class="list-group-item"><%= msg %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+		</div>
+
+		<div class="text-fields">
+			<div class="float-input">
+				<%= f.collection_select(:organization_id, Organization.all,:id,:name, {:prompt => true}) %>
+				<span><i class="fa fa-home"></i></span>
+			</div>
+			<div class="float-input">
+				<%= f.select(:category,options_for_select([ "Select Category","Hands-on", "Pro-bono","Free Meal Program","Books Donation","Medical Check up","Sapling Plantation","Kids Day out Program","Fun Events for Kids","In house Stalls","Coastal Clean Up Program","Clothes Drive","Blood Donation","ABCO Marathon","Clean Up your neighbourhood", "Awareness Program", "Magazines for School Library", "Visit to Old Age Home", "RASA STall", "Eye and Organ Donation Awareness" ], @sw_interaction.category ) ,{}) %>
+				<span><i class="fa fa-list-ul"></i></span>
+			</div>
+			<div class="float-input">
+				<%= f.text_field(:volunteerHours,  placeholder: 'Volunteer Hours') %>
+				<span><i class="fa fa-clock-o"></i></span>
+			</div>
+			<div class="float-input input-append date">
+				<%= f.text_field(:fromactivitydate, :value => @sw_interaction.fromactivitydate.nil? ? nil : @sw_interaction.fromactivitydate.strftime("%m/%d/%Y %I:%M %p"), :id =>'fromdate', placeholder: 'From Date') %>
+				<span class="add-on"><i class="fa fa-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+			</div>
+			<div class="float-input input-append date">
+				<%= f.text_field(:toactivitydate,:value =>  @sw_interaction.toactivitydate.nil? ? nil : @sw_interaction.toactivitydate.strftime("%m/%d/%Y %I:%M %p") , :id =>'todate', placeholder: 'To Date') %>
+				<span class="add-on"><i class="fa fa-calendar" data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+			</div>
+			<div class="float-input comment-txt">
+				<%= f.text_area(:comment, placeholder: 'Comments (Optional)') %>
+				<span><i class="fa fa-comment"></i></span>
+			</div>
+		</div>
+
+		<div class="text-fields">
+			 <%if @sw_interaction.new_record? %>
+				 <%= button_tag(type: 'submit') do %>
+					<i class="fa fa-plus"></i>Log New Activity
+				 <% end %>
+			 <% else %>
+				 <%= button_tag(type: 'submit') do %>
+					<i class="fa fa-edit"></i>Edit Activity
+				 <% end %>
+			 <% end %>
+
+			 <%= link_to sw_interactions_path, :class => 'register' do %>
+				<i class="fa fa-arrow-left"></i>Back
+	         <% end %>
+		</div>
+
+		<div id="msg" class="message"></div>
+	<% end %>
+</div>

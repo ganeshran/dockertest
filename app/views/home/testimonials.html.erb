@@ -1,0 +1,39 @@
+<div id="test-slider" class="box-section triggerAnimation animated fadeIn" data-animate="fadeIn">
+	<div class="pow-section bs20">
+		<h1>ABCO India Community Impact Testimonials</h1>
+	</div>
+
+	<div class="box-section toggle-section">
+		<h2>Please click on the name to read the testimonials</h2>
+		<div class="accordion-box">
+			<% @testimonials.each do |testimonial| %>
+			<div class="accord-elem">
+				<div class="accord-title">
+					<h3><%= testimonial.author %></h3>
+					<a class="accord-link" href="##">
+						<% if not testimonial.imagefile.blank? %>
+							<%= image_tag(testimonial.imagefile, height: '45', width: '42') %>
+						<% end %>
+					</a>
+				</div>
+				<div class="accord-content" style="display: none;">
+					<div class="row">
+						<div class="col-md-2">
+							<div class="image-box">
+								<% if not testimonial.imagefile.blank? %>
+									<%= image_tag(testimonial.imagefile, height: '258', width: '216') %>
+								<% end %>
+							</div>
+						</div>
+						<div class="col-md-8 pull-right">
+							<div class="cont-box">
+								<%=raw testimonial.story %>				
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>

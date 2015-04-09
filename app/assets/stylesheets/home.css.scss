@@ -1,0 +1,76 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.home
+{
+	.panel-body
+	{
+		padding:10px;
+
+		h4
+		{
+			margin:0px;
+		}
+
+		.picture
+		{
+			img
+			{
+				width:60%;
+			}
+		}
+
+		.imgholder
+		{
+			text-align:center;
+		}
+
+		.question
+		{
+			.title
+			{
+				margin-bottom:10px;
+				font-weight:bold;
+			}
+
+			margin-bottom:20px;
+			margin-top:20px;
+		}
+
+		.well
+		{
+			font-weight:bold;
+			font-size:2em;
+		}
+	}
+
+	.gallery
+	{
+		img
+		{
+			width:100%;
+		}
+	}
+
+
+	.panel-group
+	{
+		span.author
+		{
+			text-decoration:none;
+			font-size:24px;
+			cursor:pointer;
+		}
+
+		span.author:hover
+		{
+			text-decoration:underline;
+		}
+		.desc
+		{
+			margin-top:10px;
+		}
+	}
+
+
+}

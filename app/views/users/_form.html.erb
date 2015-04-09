@@ -1,0 +1,59 @@
+<%= form_for(@user, :html => {:class => "ci-form"}) do |f| %>
+
+	<div class="actions container">
+		<div class="row">
+			<div class="col-lg-7">
+				<% if @user.errors.any? %>
+					<div class="errorPanel panel panel-danger">
+					<div class="panel-heading">	<h4><%= pluralize(@user.errors.count, "error") %> prevented this Activity from being saved:</h4>
+					</div>
+
+					<ul class="list-group">
+						<% @user.errors.full_messages.each do |msg| %>
+							<li class="list-group-item"><%= msg %></li>
+					<% end %>
+					</ul>
+				</div>
+			<% end %>
+			</div>
+		</div>
+
+		<div class="text-fields">
+			<div class="float-input">
+				<%=  f.text_field(:name, id: "name", placeholder: 'Name') %>
+				<span><i class="fa fa-user"></i></span>
+			</div>
+
+			<div class="float-input">
+				<%= f.text_field :email, id: "email", placeholder: 'E-Mail ID'%>
+				<span><i class="fa fa-envelope"></i></span>
+			</div>
+
+			<div class="float-input">
+				<%= f.password_field :password, id: "password", placeholder: "Password" %>
+				<span><i class="fa fa-lock"></i></span>
+			</div>
+
+			<div class="float-input">
+				<%= f.password_field :password_confirmation, id: "password", placeholder: "Confirm Password" %>
+				<span><i class="fa fa-lock"></i></span>
+			</div>
+		</div>
+
+		<div class="text-fields">
+			 <%= button_tag(type: 'submit') do %>
+				 <i class="fa fa-pencil-square-o"></i>
+				 <% if @user.new_record? %>
+			 	Sign Up 
+			<% else %>
+					Edit Profile
+				<% end %>
+			 <% end %>
+
+			 <%= link_to @user, :class => 'register' do %>
+				<i class="fa fa-eye"></i>Show
+	         <% end %>
+		</div>
+
+	</div>
+<% end %>

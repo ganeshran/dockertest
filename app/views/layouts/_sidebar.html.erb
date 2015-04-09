@@ -1,0 +1,61 @@
+<div id="sidebar">
+	<!-- header -->
+	<header class="sidebar-section">
+		<div class="header-logo">
+			<%= link_to controller: "home", action: "index" do %>
+				<%=image_tag('CIlogo.png') %>		
+			<% end %>
+		</div>
+		<a class="elemadded responsive-link" href="##">Menu</a>
+		<div class="navbar-vertical">
+			<ul class="main-menu">
+				<li>
+					<%= active_link_to sw_interactions_path, :active => :exclusive do %>
+						<i class="fa fa-angle-double-right"></i>Activities
+					<% end %>
+				</li>
+				<li>
+					<%= active_link_to new_sw_interaction_path,:active => :exclusive do %>
+						<i class="fa fa-angle-double-right"></i>New Activity
+					<% end %>
+				</li>
+				<li>
+					<%= active_link_to controller: "home", action: "events" do %>
+						<i class="fa fa-angle-double-right"></i>Upcoming Events/News
+					<% end %>
+				</li>
+				<li>
+					<%= active_link_to organizations_path,:active => :exclusive do %>
+						<i class="fa fa-angle-double-right"></i>Registered NGOs
+					<% end %>
+				</li>
+				<% if current_user.admin? %>
+					<li>
+					<%= active_link_to new_organization_path,:active => :exclusive do %>
+							<i class="fa fa-angle-double-right"></i>New Organization
+						<% end %>
+					</li>
+				<%end%>
+				<li>
+					<%= active_link_to users_path do %>
+						<i class="fa fa-angle-double-right"></i>Registered Users
+					<% end %>
+				</li>
+				<li>
+					<%= active_link_to controller: "home", action: "gallery" do %>
+						<i class="fa fa-angle-double-right"></i>Gallery
+					<% end %>
+				</li>
+				<li>
+					<%= active_link_to controller: "home", action: "faq" do %>
+						<i class="fa fa-angle-double-right"></i>FAQs
+					<% end %>
+				</li>
+				<li><%= active_link_to controller: "home", action: "testimonials" do %>
+						<i class="fa fa-angle-double-right"></i>Testimonials/Impact Stories
+					<% end %>
+			    </li>
+			</ul>
+		</div>
+	</header>
+</div>

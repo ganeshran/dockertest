@@ -1,0 +1,35 @@
+<div class="box-section fontawesome-section triggerAnimation animated fadeIn" data-animate="fadeIn">
+	<h2>Volunteer Activity details</h2> 
+	<div class="row bs20">
+		<div class="col-md-3">
+			<ul class="icon-list">
+				<li><i class="fa fa-home"></i>Organization Name</li>
+				<li class="brow"><i class="fa fa-envelope"></i>Organization Address</li>
+				<li><i class="fa fa-phone"></i>Organization Phone</li>
+				<li><i class="fa fa-list-ul"></i>Category</li>
+				<li><i class="fa fa-clock-o"></i>Volunteer Hours</li>
+				<li><i class="fa fa-calendar"></i>From Date</li>
+				<li><i class="fa fa-calendar"></i>To Date</li>
+				<li class="brow"><i class="fa fa-comment"></i>Comments</li>
+				<li><i class="fa fa-user"></i>Created By</li>
+			</ul>
+		</div>
+		<div class="col-md-9">
+			<ul class="icon-list">
+				<li><%= @sw_interaction.organization.name%></li>
+				<li class="brow"><%= @sw_interaction.organization.address%></li>
+				<li><%= @sw_interaction.organization.phone %></li>
+				<li><%= @sw_interaction.category %></li>
+				<li><%= @sw_interaction.volunteerHours%></li>
+				<li><%= @sw_interaction.fromactivitydate.strftime('%d/%m/%Y %I:%M %p')%></li>
+				<li><%= @sw_interaction.toactivitydate.strftime('%d/%m/%Y %I:%M %p')%></li>
+				<li class="brow"><%= @sw_interaction.comment %></li>
+				<li><%= @sw_interaction.user.name %></li>
+			</ul>
+		</div>
+	</div>
+	
+	<%= link_to sw_interactions_path, :class => 'bluebtnlink', data: { no_turbolink: true } do %>
+		<i class="fa fa-arrow-left"></i>Back
+	<% end %>
+</div>

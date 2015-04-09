@@ -1,0 +1,34 @@
+<% provide(:title, "Sign in") %>
+
+<div class="box-section contact-section triggerAnimation animated fadeIn" data-animate="fadeIn">
+	<div class="container bs20">
+		<h2>Sign-In</h2>
+	</div>
+
+	<div class="container">
+		<%= form_for(:session, url: sessions_path, :html => {:class => "ci-form"}) do |f| %>
+			<div class="text-fields">
+				<div class="float-input">
+					<%= f.text_field :email, id: "email", placeholder: 'E-Mail ID'%>
+					<span><i class="fa fa-envelope"></i></span>
+				</div>
+				<div class="float-input">
+					<%= f.password_field :password, id: "password", placeholder: "Password" %>
+					<span><i class="fa fa-lock"></i></span>
+				</div>
+			</div>
+
+			<div class="text-fields">
+				 <%= button_tag(type: 'submit') do %>
+					<i class="fa fa-sign-in"></i>Sign In 
+				 <% end %>
+
+				 <%= link_to new_user_path, :class => 'register' do %>
+					<i class="fa fa-pencil-square-o"></i>Register
+		         <% end %>
+			</div>
+
+			<div id="msg" class="message"></div>
+		<% end %>
+	</div>
+</div>

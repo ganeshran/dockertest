@@ -1,0 +1,32 @@
+// Place all the styles related to the SwInteractions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.swListPanel{
+	.btn	
+	{
+		padding-top:3px;	
+		padding-bottom:3px;
+	}
+	.panel-heading
+	{
+		h2 {
+			margin-top:2px;
+			margin-bottom:2px;
+		}
+	}
+	margin-bottom:0px;
+}
+
+.errorPanel
+{
+	h4
+	{
+		margin-top:2px;
+		margin-bottom:2px;
+	}
+
+	.list-group-item
+	{
+		padding: 5px 10px;
+	}
+}

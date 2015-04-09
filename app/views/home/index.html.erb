@@ -1,2 +1,60 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div id="slider" class="box-section triggerAnimation animated fadeIn" data-animate="fadeIn">
+	<div class="pow-section bs20">
+		<h1>ABCO India Community Impact Program</h1>
+	</div>
+
+	<br/>
+	<!-- Start slider -->
+	<div class="flexslider">
+		<ul class="slides">
+			<li>
+				<%= image_tag('ServiceWeek2014.jpg') %>
+				<p class="flex-caption">Week of Service 2014!</p>
+			</li>
+			<li>
+				<%= image_tag('21.jpg') %>
+				<p class="flex-caption">Welcome to ABCO India Community Impact!</p>
+			</li>
+			<li>
+				<%= image_tag('1.jpg') %>
+				<p class="flex-caption">Welcome to ABCO India Community Impact!</p>
+			</li>
+			<li>
+				<%= image_tag('2.jpg') %>
+				<p class="flex-caption">Welcome to ABCO India Community Impact!</p>
+			</li>
+			<li>
+				<%= image_tag('3.jpg') %>
+				<p class="flex-caption">Welcome to ABCO India Community Impact!</p>
+			</li>
+			<li>
+				<%= image_tag('14.jpg') %>
+				<p class="flex-caption">Welcome to ABCO India Community Impact!</p>
+			</li>
+			<li>
+				<%= image_tag('25.jpg') %>
+				<p class="flex-caption">Welcome to ABCO India Community Impact!</p>
+			</li>
+		</ul>
+    <ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="">2</a></li><li><a class="flex-active">3</a></li><li><a>4</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="##">Previous</a></li><li><a class="flex-next" href="##">Next</a></li></ul></div>
+    <!-- End slider -->
+
+    <br/><br/>
+    <h2>Welcome to ABCO India Community Impact!</h2>
+    <div class="pow-section triggerAnimation animated fadeIn" data-animate="fadeIn">
+
+		<p style="text-align: justify;">
+			Community Impact is ABCO Advisory Services India's corporate social responsibility program. Our employees’ commitment to quality health care and education goes beyond their day jobs. We use our skills and passions to transform the communities in which we live and work—through firm wide events, hands-on activities, pro bono projects, and board service.
+		</p>
+
+		<h4>
+			<% if not signed_in? %>
+				Please <a href="/signin">Sign-In</a> or <a href="/users/new">Register</a> to continue
+			<%end %>
+		</h4>
+	</div>
+
+	<div class="clearfix">
+		<a class="go-top" href="##"><i class="fa fa-angle-up"></i></a>
+	</div>
+</div>

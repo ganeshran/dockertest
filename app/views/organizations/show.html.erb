@@ -1,0 +1,26 @@
+<div class="box-section fontawesome-section triggerAnimation animated fadeIn" data-animate="fadeIn">
+	<h2><%= @organization.name %></h2>
+	<div class="row bs20">
+		<div class="col-md-3">
+			<ul class="icon-list">
+				<li><i class="fa fa-home"></i>Organization Name</li>
+				<li class="brow"><i class="fa fa-envelope"></i>Organization Address</li>
+				<li><i class="fa fa-phone"></i>Organization Phone</li>
+		</div>
+		<div class="col-md-9">
+			<ul class="icon-list">
+				<li><%= @organization.name%></li>
+				<li class="brow"><%= @organization.address%></li>
+				<li><%= @organization.phone %></li>
+			</ul>
+		</div>
+	</div>
+	
+	<%= link_to edit_organization_path(@organization), :class => 'bluebtnlink defaultgreen', data: { no_turbolink: true } do %>
+		<i class="fa fa-edit"></i>Edit
+	<% end %>
+
+	<%= link_to sw_interactions_path, :class => 'bluebtnlink', data: { no_turbolink: true } do %>
+		<i class="fa fa-arrow-left"></i>Back
+	<% end %>
+</div>

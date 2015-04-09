@@ -1,0 +1,28 @@
+namespace :csrails do
+
+	desc "Add Testimonials"
+	task :createtestimonials => :environment do
+		Testimonial.delete_all
+		Testimonial.create(
+			:author => 'Mary Isabella',
+			:imagefile => 'img_mary.jpg',
+			:story => "<p>First of all cheers to all the Community Impact members!!!.  I thoroughly enjoyed every activity that we did in our Community Impact week. As a group we wanted to bring smile on every individual we met, and create an impact by sharing our love, affection and most importantly sharing our time with them. Sharing is always fun, it may not yield any earthly things in return, but the amount of satisfaction it yields is just terrific. Human beings are generally caught in a myth or perception that money brings in a lot of satisfaction, but the satisfaction one gets while sharing, no amount of money can really substitute it.</p>
+<p>The part that I really cherished was the day out with the kids, and the visit to Little Sisters Home. One end we met these wonderful children, who have a lot dreams in life, looking forward to chase their desires and get to their goal one fine day. The other end we met some lovely elderly people, who have travelled through all the ups and downs of life, some with good memories of the past, for some life had taken a toil on them. One common aspect in both, were the amazing amount of faith and hope they carried with them. It really reminded me to be thankful about all the blessing I have received and also inspired me to move on with life, come what may.</p>					<p>Looking forward to create as much as impact as we can. Thanks.</p>"
+			)
+		Testimonial.create(
+			:author => 'Soham Hemant Joshi',
+			:imagefile => 'pic_soham.jpg',
+			:story => "<p>I was a part of the old age home visit during the last community impact week. I got an opportunity to visit and interact with the aged people at the old age home. Through this event, I was able to contribute a small community impact by bringing smiles to many people who needed love. At the end of this exercise, I realized that I was the one impacted in a bigger way.</p><p>The first day was the old age home visit. There was a lot of work at hand, but I had committed to this event and decided to get back to it once I return. We hurried to the old age home where we were greeted so warmly by the grandpas and grandmas with cheering and clapping. A grandpa was celebrating his 100th birthday and we arranged the cake and sweets for his party. The crowd was enthusiastic unlike what I had expected. They were smiling, dancing and singing to my surprise. I had forgotten my office work and worries by now and was relishing the fun these people were having. A couple of grandmas called me to ask what I do. One of them was a former teacher who told me I look exactly like her student 'Arjun' and was very happy to see me. Then I met Grizelda who was a former English literature teacher. She asked me how I found her singing performance, to which I said 'superb', making her very happy. She went on to sing 2 more English songs for me and I was awestruck at the enthusiasm she displayed. There were other grandmas too, who were not former teachers, who did not know English and were very quiet. I showed them card magic and the wrinkles on their faces turned into a beautiful formation of smile and surprise. I saw other grandmas telling their story and was saddened to hear it. We distributed the sweets and the Real juice packs and each one of them thanked me. There were several requests to change their juice to a different flavor, and I smiled and got them the one of their choice. I had read that old age is the 2nd childhood and I realized that is true. There was a lot more of singing and mimicry which received a lot of applause. The ceremony was approaching the end and a grandma sang a song that touched my heart. She sang the song</p><blockquote><p>Que sera, sera<br />Whatever will be, will be<br />The future's not ours to see<br />Que sera, sera<br />What will be, will be .<br /></p></blockquote><p>It was time to go and the grandmas gave us loads of blessings. We waved to them with a promise to return. On the way back the song reverberated in my mind. They had taught me that happiness can be found even in the most difficult phases of life, only if one remembers to smile and not worry too much about the future. At the end of this event, I feel that I was the one impacted in a bigger way. It had awakened my soul, planted a fire in my heart to do more and brought peace to my mind.</p>"
+		)
+		Testimonial.create(
+			:author => 'Vinitta Shobana Christopher',
+			:imagefile => 'img_vinitta.jpg',
+			:story => "<p>I always wanted to involve myself in volunteer activities but I never had a chance until I joined ABCO. I readily volunteered and joined the Community impact team as soon as I heard about it. As a team activity I have visited many orphanages and the most memorable one is the visit to the old age home. The visit made realize how cruel the loneliness is for someone who is longing for love and care. I was moved by the words they said 'We dont need money or food, just visit us often'. I do such activities for my own inner satisfaction and I am 200% sure I will continue to do such service in future.</p>"
+		)
+		Testimonial.create(
+			:author => 'Biju Mani',
+			:imagefile => 'img_biju.jpg',
+			:story => "<p>I am a part of the ABCO community Impact service team for the past two years. I get involved in Community Impact service out of my own personal interest. Our service may or may not bring major change in the lives of the people whom we serve but I am sure that every small involvement counts. I am happy that we are able to bring some smile in the face of the struggling people as a team.</p>"
+		)
+	end
+end

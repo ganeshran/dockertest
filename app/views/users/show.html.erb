@@ -1,0 +1,20 @@
+<div class="box-section fontawesome-section triggerAnimation animated fadeIn" data-animate="fadeIn">
+	<h2><%= @user.name %> Profile</h2>
+	<div class="row bs20">
+		<div class="col-md-3">
+			<ul class="icon-list">
+				<li><i class="fa fa-home"></i>User Name</li>
+				<li><i class="fa fa-envelope"></i>User Email ID</li>
+		</div>
+		<div class="col-md-9">
+			<ul class="icon-list">
+				<li><%= @user.name%></li>
+				<li><%= @user.email%></li>
+			</ul>
+		</div>
+	</div>
+
+	<%= link_to users_path, :class => 'bluebtnlink', data: { no_turbolink: true } do %>
+		<i class="fa fa-arrow-left"></i>Back
+	<% end %>
+</div>

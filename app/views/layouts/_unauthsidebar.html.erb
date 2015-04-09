@@ -1,0 +1,35 @@
+<div id="sidebar">
+	<!-- header -->
+	<header class="sidebar-section">
+		<div class="header-logo">
+			<%= link_to controller: "home", action: "index" do %>
+				<%=image_tag('CIlogo.png') %>		
+			<% end %>
+		</div>
+		<a class="elemadded responsive-link" href="##">Menu</a>
+		<div class="navbar-vertical">
+			<ul class="main-menu">
+				<li>
+					<%= active_link_to controller: "home", action: "index" do %>
+						<i class="fa fa-home"></i>Home
+					<% end %>
+				</li>
+				<li>
+					<%= active_link_to signin_path,:active => :exclusive do %>
+						<i class="fa fa-user"></i>Sign-In
+					<% end %>
+				</li>
+				<li>
+					<%= active_link_to new_user_path,:active => :exclusive do %>
+						<i class="fa fa-pencil-square-o"></i>Register
+					<% end %>
+				</li>
+				<li>
+					<%= active_link_to controller: "home", action: "faq" do %>
+						<i class="fa fa-question"></i>FAQs
+					<% end %>
+				</li>
+			</ul>
+		</div>
+	</header>
+</div>

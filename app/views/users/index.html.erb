@@ -1,0 +1,40 @@
+<div class="box-section table-section triggerAnimation animated fadeIn" data-animate="fadeIn">
+  <h2>All Registered Users</h2>
+
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td> <%= user.name %> </td>
+            <td> <%= user.email%> </td>
+            <td class="action-section last">
+              <ul class="feature-list">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-cog"></i>
+                  </a>
+
+                  <ul class="dropdown-menu pull-right">
+                    <li> <%= link_to 'Activities', user_sw_interactions_path(user) %> </li>
+                    <li> <%= link_to 'Show', user, data: { no_turbolink: true } %> </li>
+                    <li> <%= link_to 'Edit', edit_user_path(user), data: { no_turbolink: true } %></li>
+                    <li> <%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

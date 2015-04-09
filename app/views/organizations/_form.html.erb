@@ -1,0 +1,52 @@
+<div class="container">
+	
+	<%= form_for(@organization, :html => {:class => "ci-form"}) do |f| %>
+		<div class="col-lg-7">
+			<% if @organization.errors.any? %>
+				<div class="errorPanel panel panel-danger">
+					<div class="panel-heading">	<h4><%= pluralize(@organization.errors.count, "error") %> prevented this Activity from being saved:</h4>
+					</div>
+
+					<ul class="list-group">
+						<% @organization.errors.full_messages.each do |msg| %>
+							<li class="list-group-item"><%= msg %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+		</div>
+
+		<div class="text-fields">
+			<div class="float-input">
+				<%= f.text_field :name, id: "name", placeholder: 'Organization Name' %>
+				<span><i class="fa fa-home"></i></span>
+			</div>
+			<div class="float-input">
+				<%= f.text_field :address, id: "address", placeholder: 'Address' %>
+				<span><i class="fa fa-envelope"></i></span>
+			</div>
+			<div class="float-input">
+				<%= f.text_field :phone, id: "phone", placeholder: 'Phone Number' %>
+				<span><i class="fa fa-phone"></i></span>
+			</div>
+		</div>
+
+		<div class="text-fields">
+			 <%if @organization.new_record? %>
+				 <%= button_tag(type: 'submit') do %>
+					<i class="fa fa-plus"></i>Create Organization
+				 <% end %>
+			 <% else %>
+				 <%= button_tag(type: 'submit') do %>
+					<i class="fa fa-edit"></i>Edit Organization
+				 <% end %>
+			 <% end %>
+
+			 <%= link_to organizations_path, :class => 'register' do %>
+				<i class="fa fa-arrow-left"></i>Back
+	         <% end %>
+		</div>
+
+		<div id="msg" class="message"></div>
+	<% end %>
+</div>

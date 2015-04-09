@@ -1,0 +1,2 @@
+module SwInteractionsHelper
+end

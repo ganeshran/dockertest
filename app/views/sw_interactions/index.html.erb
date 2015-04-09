@@ -1,0 +1,66 @@
+<div class="box-section table-section triggerAnimation animated fadeIn" data-animate="fadeIn">
+	<% if not @current_org.nil? %>
+		<h2>Activities for the <%= @current_org.name %> Organization </h2>
+	<% elsif not @cur_user.nil? %>
+		<h2>Activities for the <%= @cur_user.name %> User </h2>
+	<% else %>
+		<h2>List of your Activities</h2> 
+	<% end%>
+
+	<div class="table-responsive">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Organization</th>
+					<th>Category</th>
+					<th>Volunteer Hours</th>
+					<th>From Date</th>
+					<th>To Date</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<% @sw_interactions.each do |sw_interaction| %>
+					<tr>
+						<td> <%= sw_interaction.organization.name %> </td>
+						<td> <%= sw_interaction.category %> </td>
+						<td> <%= sw_interaction.volunteerHours %> </td>
+						<td> <%= sw_interaction.fromactivitydate.strftime("%m/%d/%Y %I:%M %p") %></td>
+						<td> <%= sw_interaction.toactivitydate.strftime("%m/%d/%Y %I:%M %p") %></td>
+						<td class="action-section last">
+							<ul class="feature-list">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+										<i class="fa fa-cog"></i>
+									</a>
+
+									<ul class="dropdown-menu pull-right">
+										<li><%= link_to 'Show', sw_interaction, data: { no_turbolink: true } %></li>
+										<li><%= link_to 'Edit', edit_sw_interaction_path(sw_interaction), data: { no_turbolink: true } %></li>
+										<li><%= link_to 'Delete', sw_interaction, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+									</ul>
+								</li>
+							</ul>
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+
+	<%= link_to  new_sw_interaction_path, :class => 'bluebtnlink', data: { no_turbolink: true } do %>
+		<i class="fa fa-plus"></i>Log New Volunteer Activity
+    <% end %>
+	
+	<% if not @current_org.nil? %>
+		<%= link_to  organizations_path, :class => 'bluebtnlink lightblue' do %>
+			<i class="fa fa-arrow-left"></i>Back to Organizations List
+	    <% end %>
+	<% end %>
+	<% if not @cur_user.nil? %>
+		<%= link_to  users_path, :class => 'bluebtnlink lightblue' do %>
+			<i class="fa fa-arrow-left"></i>Back to Users List
+	    <% end %>
+	<%end %>
+</div>

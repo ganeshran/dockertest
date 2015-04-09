@@ -1,0 +1,33 @@
+<div class="unik-section">
+	<ul class="feature-list">
+		<% if signed_in? %>
+			<% if current_user.admin? %>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Options<b class="caret"></b></a>
+				<ul class="dropdown-menu pull-right">
+					<li><%= link_to "New Organization", new_organization_path%></li>
+				</ul>
+			</li> 
+		<% end %>
+
+		<li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown">User Options<b class="caret"></b></a>
+			<ul class="dropdown-menu pull-right">
+				<li><%= link_to "Activities", sw_interactions_path %></li>
+				<li><%= link_to "New Activity", new_sw_interaction_path %></li>
+				<li class="divider"></li>
+				<li><%= link_to "Change Password/Profile", edit_user_path(current_user) %></li>
+				<li><%= link_to 'User Profile', current_user  %> </li>
+			</ul>
+		</li> 
+		<li>
+			<span>
+				<%= link_to "Sign out", signout_path, method: "delete", data: { no_turbolink: true } %>
+			</span>
+		</li>
+		<% else %>
+			<li><%= link_to "Sign-In", signin_path, data: { no_turbolink: true } %></li>
+			<li><%= link_to "Register", new_user_path, data: { no_turbolink: true } %></li>
+		<% end %>
+	</ul> 
+</div>
