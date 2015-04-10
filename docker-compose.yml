@@ -1,7 +1,7 @@
 db:
   image: postgres
   volumes:
-   - /dbdata:/var/lib/postgresql/data
+   - /dbdata/:/var/lib/postgresql/data
   ports:
     - "5432"
 web:
